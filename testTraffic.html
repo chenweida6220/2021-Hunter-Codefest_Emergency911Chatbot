@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.11.0//maps/maps.css'>
+     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.11.0/maps/maps-web.min.js"></script>
+     <style> #map { height: 512px;  width: 512px;  }
+</style>
+  </head>
+ 
+  <body>
+    <div id='demo'> Hello! </div>
+      <div id='map'></div>
+
+
+      <script>
+        //location stuff
+        
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+
+
+
+      </script>
+  </body>
+</html>
